@@ -13,13 +13,14 @@ async function main() {
   // manually to make sure everything is compiled
   // await hre.run('compile');
 
-  // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  // This is the USDC contract address on mainnet, but you should double check.
+  const USDCAddress = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+  const MoatPayment = await hre.ethers.getContractFactory("MoatPayment");
+  const mP = await MoatPayment.deploy(USDCAddress);
 
-  await greeter.deployed();
+  await mP.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("MoatPayment deployed to:", greeter.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
