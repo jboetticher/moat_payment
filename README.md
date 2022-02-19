@@ -1,15 +1,15 @@
-# Basic Sample Hardhat Project
+# MoatPayment
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Simple escrow pools in a hardhat project.  
+Requires [hardhat](https://hardhat.org/getting-started/#installation) to run tests.
 
-Try running some of the following tasks:
+### Running Tests
+There are a couple of tests written already. Learn more about hardhat tests [here](https://hardhat.org/guides/waffle-testing.html).
 
-```shell
-npx hardhat accounts
+### Deployment
+You can deploy using hardhat if you really want to, but with such a small project it isn't worth the setup. 
+Nothing wrong with using Remix.  
+```
 npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+npx hardhat run --network mainnet deployment.js
 ```
