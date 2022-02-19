@@ -70,7 +70,8 @@ contract MoatPayment {
         require(moat.pool >= amt, "MoatPayment: not enough value in moat's pool.");
 
         moats[moatName].pool -= amt;
-        escrowToken.transfer(moat.validator, amt);
+        bool success = escrowToken.transfer(moat.validator, amt);
+        require(success, "MoatPayment: token did not successfully transfer.");
     }
 
     /**
